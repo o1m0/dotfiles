@@ -430,7 +430,24 @@ config.cursor_blink_rate = 600
 -- ==================================================
 
 config.keys = {
+    -- Font Size
+    {
+        key = "-",
+        mods = "CTRL",
+        action = act.DecreaseFontSize,
+    },
 
+    {
+        key = "=",
+        mods = "CTRL",
+        action = act.IncreaseFontSize,
+    },
+
+    {
+        key = "0",
+        mods = "CTRL",
+        action = act.ResetFontSize,
+    },
     -- 左右Pane分割
     {
         key = "h",
@@ -460,12 +477,6 @@ config.keys = {
         key = "j",
         mods = "ALT",
         action = act.ActivatePaneDirection("Down"),
-    },
-
-    {
-        key = "k",
-        mods = "ALT",
-        action = act.ActivatePaneDirection("Up"),
     },
 
     {
