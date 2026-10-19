@@ -1,0 +1,70 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[░▒▓](#3a3a3a)\
+[  ](bg:#3a3a3a fg:#ff8a1f)\
+[](bg:#9c9c9c fg:#3a3a3a)\
+$directory\
+[](fg:#9c9c9c bg:#434343)\
+$git_branch\
+$git_status\
+[](fg:#434343 bg:#272727)\
+$nodejs\
+$rust\
+$golang\
+$php\
+[](fg:#272727 bg:#222222)\
+$time\
+[ ](fg:#222222)\
+\n$character"""
+
+[directory]
+style = "fg:#e4e4e4 bg:#9c9c9c"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+symbol = ""
+style = "bg:#434343"
+format = '[[ $symbol ](fg:#ff8a1f bg:#434343)[$branch ](fg:#9c9c9c bg:#434343)]($style)'
+
+[git_status]
+style = "bg:#434343"
+format = '[[($all_status$ahead_behind )](fg:#9c9c9c bg:#434343)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#272727"
+format = '[[ $symbol ($version) ](fg:#9c9c9c bg:#272727)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#272727"
+format = '[[ $symbol ($version) ](fg:#9c9c9c bg:#272727)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:#272727"
+format = '[[ $symbol ($version) ](fg:#9c9c9c bg:#272727)]($style)'
+
+[php]
+symbol = ""
+style = "bg:#272727"
+format = '[[ $symbol ($version) ](fg:#9c9c9c bg:#272727)]($style)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#222222"
+format = '[[  $time ](fg:#aaaaaa bg:#222222)]($style)'
+
+[character]
+success_symbol = "[❯](bold #d0d0d0)"
+error_symbol = "[❯](bold red)"
